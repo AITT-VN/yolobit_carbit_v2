@@ -1,0 +1,28 @@
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+  <category name="CAR:BIT" colour="#cb2026" icon="road">
+    <block type="block_led"/>
+    <block type="block_led_car"/>
+    <block type="block_single_led">
+    <value name="number_led"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+    <value name="color"><shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow></value>
+    </block>
+    <block type="block_car_forward">
+    <value name="speed"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+    </block>
+    <block type="block_line_sensor">
+    <value name="num"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+    </block>
+    <block type="block_control_motor">
+    <value name="speed"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+    </block>
+    <block type="block_car_stop"/>
+    <block type="block_ultrasonic_checkdistance"/>
+    <block type="yolobit_ble_start">
+      <value name="NAME">
+        <shadow type="text"><field name="TEXT">oh-carbit</field></shadow>
+      </value>
+    </block>
+    <block type="yolobit_ble_on_receive_message"></block>
+    <block type="block_gamepad_message"/>
+  </category>
+</xml>
