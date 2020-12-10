@@ -1,5 +1,5 @@
 {
-    "name": "Xe điều khiển V2",
+    "name": "Car:Bit V2",
     "description": "Mục mở rộng dành cho bộ kit xe điều khiển Car:Bit v2",
     "libs": [
         "carbit.py",
