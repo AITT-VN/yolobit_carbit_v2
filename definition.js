@@ -670,19 +670,39 @@ Blockly.Blocks['block_gamepad_message'] = {
       "name": "type",
       "options": [
         [
-          "Lên",
+          {
+            src: "https://www.flaticon.com/svg/static/icons/svg/44/44674.svg",
+            width: 15,
+            height: 15,
+            alt: "Lên",
+          },
           "!B516"
         ],
         [
-          "Xuống",
+          {
+            src: "https://www.flaticon.com/svg/static/icons/svg/44/44698.svg",
+            width: 15,
+            height: 15,
+            alt: "Xuống",
+          },
           "!B615"
         ],
         [
-          "Trái",
+          {
+            src: "https://www.flaticon.com/svg/static/icons/svg/44/44767.svg",
+            width: 15,
+            height: 15,
+            alt: "Trái",
+          },
           "!B714"
         ],
         [
-          "Phải",
+          {
+            src: "https://www.flaticon.com/svg/static/icons/svg/56/56925.svg",
+            width: 15,
+            height: 15,
+            alt: "Phải",
+          },
           "!B814"
         ],
         [
@@ -717,7 +737,7 @@ Blockly.Python['block_gamepad_message'] = function(block) {
   Blockly.Python.definitions_['import_car'] = 'from carbit import *';
   // TODO: Assemble Python into code variable.
   var dropdown_type = block.getFieldValue('type');
-  var code = dropdown_type;
+  var code = "'" + dropdown_type + "'";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
