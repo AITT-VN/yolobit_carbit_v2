@@ -90,7 +90,7 @@ Blockly.Blocks['block_car_forward'] = {
         "previousStatement": null,
         "nextStatement": null,
         "colour": "#cb2026",
-        "tooltip": "tốc độ từ 0 đến 1000",
+        "tooltip": "tốc độ từ 0 đến 100",
         "helpUrl": ""
       }
     );
@@ -246,11 +246,11 @@ Blockly.Blocks['block_line_sensor'] = {
             "options": [
               [
                 "trái",
-                "pin1"
+                "pin0"
               ],
               [
                 "phải",
-                "pin0"
+                "pin1"
               ]
             ]
           },
@@ -293,6 +293,44 @@ Blockly.Python['block_line_sensor'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+Blockly.Blocks['block_line_sensor_read_analog'] = {
+  init: function() {
+    this.jsonInit(
+      {
+        "type": "block_type",
+        "message0": "đọc giá trị cảm biến dò đường %1",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "NAME1",
+            "options": [
+              [
+                "trái",
+                "pin0"
+              ],
+              [
+                "phải",
+                "pin1"
+              ]
+            ]
+          }
+        ],
+        "output": null,
+        "colour": "#cb2026",
+        "tooltip": "",
+        "helpUrl": ""
+      }
+    );
+  }
+};
+
+Blockly.Python['block_line_sensor_read_analog'] = function(block) {
+  Blockly.Python.definitions_['import_car'] = 'from carbit import *';
+  var dropdown_name1 = block.getFieldValue('NAME1');
+  var code = dropdown_name1+ '.read_analog()';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
 
 Blockly.Blocks['block_led_car'] = {
   init: function() {
@@ -408,7 +446,7 @@ Blockly.Blocks['block_control_motor'] = {
         "previousStatement": null,
         "nextStatement": null,
         "colour": "#cb2026",
-        "tooltip": "tốc độ từ 0 đến 1000",
+        "tooltip": "tốc độ từ 0 đến 100",
         "helpUrl": ""
       }
       );
