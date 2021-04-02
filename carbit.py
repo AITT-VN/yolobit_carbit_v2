@@ -89,7 +89,13 @@ class Car():
         else:
             pin6.write_digital((0))
     
-
+    def both_led(self,state):
+        if state:
+            pin4.write_digital((1))
+            pin6.write_digital((1))
+        else:
+            pin4.write_digital((0))
+            pin6.write_digital((0))
 
 def testThread():
     global wait

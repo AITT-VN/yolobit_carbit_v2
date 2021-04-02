@@ -97,7 +97,8 @@ Blockly.Blocks['carbit_move'] = {
     );
   }
 };
-Blockly.Python['carbit_forward'] = function(block) {
+
+Blockly.Python['carbit_move'] = function(block) {
   Blockly.Python.definitions_['import_car'] = 'from carbit import *';
   Blockly.Python.definitions_['create_car'] = 'new_car = Car()';
   var dropdown_action = block.getFieldValue('action');
@@ -366,7 +367,6 @@ Blockly.Python['carbit_ledRGB'] = function(block) {
   return code;
 };
 
-
 Blockly.Blocks['carbit_speed'] = {
   init: function() {
     this.jsonInit(
@@ -392,14 +392,14 @@ Blockly.Blocks['carbit_speed'] = {
   }
 };
   
-  Blockly.Python['carbit_speed'] = function(block) {
-    Blockly.Python.definitions_['import_car'] = 'from carbit import *';
-    Blockly.Python.definitions_['create_car'] = 'new_car = Car()';
-    var number_name = block.getFieldValue('NAME');
-    // TODO: Assemble Python into code variable.
-    var code = 'new_car.setspeed('+number_name+')\n';
-    return code;
-  };
+Blockly.Python['carbit_speed'] = function(block) {
+  Blockly.Python.definitions_['import_car'] = 'from carbit import *';
+  Blockly.Python.definitions_['create_car'] = 'new_car = Car()';
+  var number_name = block.getFieldValue('NAME');
+  // TODO: Assemble Python into code variable.
+  var code = 'new_car.setspeed('+number_name+')\n';
+  return code;
+};
 
   
 Blockly.Blocks['carbit_control_motor'] = {
@@ -493,6 +493,10 @@ Blockly.Blocks['carbit_led'] = {
               [
                 Blockly.Msg.CARBIT_LED_MESSAGE2,
                 "led_right"
+              ],
+              [
+                Blockly.Msg.CARBIT_LED_MESSAGE3,
+                "both_led"
               ]
             ]
           },
@@ -501,11 +505,11 @@ Blockly.Blocks['carbit_led'] = {
             "name": "state",
             "options": [
               [
-                Blockly.Msg.CARBIT_LED_MESSAGE3,
+                Blockly.Msg.CARBIT_LED_MESSAGE4,
                 "True"
               ],
               [
-                Blockly.Msg.CARBIT_LED_MESSAGE4,
+                Blockly.Msg.CARBIT_LED_MESSAGE5,
                 "False"
               ]
             ]
@@ -531,8 +535,7 @@ Blockly.Python['carbit_led'] = function(block) {
       // TODO: Assemble Python into code variable.
       var code = 'new_car.'+dropdown_led+'('+dropdown_state+')\n';
       return code;
-    };
-
+};
 
 Blockly.Blocks['carbit_single_led'] = {
   init: function() {
