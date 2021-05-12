@@ -4,7 +4,7 @@
     "libs": [
         "carbit.py",
         "ble_advertising.py",
-        "ble_uart_peripheral.py"
+        "ble_uart_peripheral_carbit.py"
     ],
     "blocks": [
         "definition.js"

@@ -2,7 +2,7 @@
 
 ```python
 from carbit import *
-from ble_uart_peripheral import *
+from ble_uart_peripheral_carbit import *
 import time
 
 def ble_on_rx_callback(event):

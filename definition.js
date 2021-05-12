@@ -681,7 +681,7 @@ Blockly.Python.addReservedWords('ble_start');
 Blockly.Python.addReservedWords('ble_on_rx');
 
 Blockly.Python['yolobit_ble_start'] = function(block) {
-  Blockly.Python.definitions_['import_ble_peripheral'] = 'from ble_uart_peripheral import *';
+  Blockly.Python.definitions_['import_ble_peripheral'] = 'from ble_uart_peripheral_carbit import *';
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'ble_start(' + value_name + ')\n';
@@ -689,7 +689,7 @@ Blockly.Python['yolobit_ble_start'] = function(block) {
 };
 
 Blockly.Python['yolobit_ble_on_receive_message'] = function(block) {
-  Blockly.Python.definitions_['import_ble_peripheral'] = 'from ble_uart_peripheral import *';
+  Blockly.Python.definitions_['import_ble_peripheral'] = 'from ble_uart_peripheral_carbit import *';
   var variable_message = Blockly.Python.variableDB_.getName(block.getFieldValue('message'), Blockly.Variables.NAME_TYPE);
   var statements_action = Blockly.Python.statementToCode(block, 'ACTION');
   // TODO: Assemble Python into code variable.
