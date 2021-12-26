@@ -1,10 +1,11 @@
 {
-    "name": "Xe điều khiển V2",
+    "name": "CAR:BIT V2",
     "description": "Mục mở rộng dành cho bộ kit xe điều khiển Car:Bit v2",
     "libs": [
-        "carbit.py",
-        "ble_advertising.py",
-        "ble_uart_peripheral.py"
+        "carbitv2.py",
+        "carbitv2_hcsr04.py",
+        "carbitv2_ble_broadcasting.py",
+        "carbitv2_ble_uart_peripheral.py"
     ],
     "blocks": [
         "definition.js"

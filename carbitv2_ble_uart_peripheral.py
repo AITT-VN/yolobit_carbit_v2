@@ -2,7 +2,7 @@
 
 import time, json
 import bluetooth
-from ble_advertising import advertising_payload
+from carbitv2_ble_broadcasting import advertising_payload
 
 from micropython import const
 
