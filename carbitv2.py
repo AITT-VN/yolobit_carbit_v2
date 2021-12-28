@@ -1,9 +1,7 @@
 from yolobit import *
 import machine, neopixel
 import time
-import binascii
 
-Red = [255, 0, 0]
 
 class CarBit():
     def __init__(self):
@@ -15,29 +13,31 @@ class CarBit():
     def forward(self, speed, t=None):
         self.set_wheel_speed(speed, speed)
         if t != None :
-            time.sleep(t)
-            self.stop()
+            self.stop(t)
         
     def backward(self, speed, t=None):
         self.set_wheel_speed(-speed, -speed)
         if t != None :
-            time.sleep(t)
-            self.stop()
+            self.stop(t)
 
     def turn_right(self, speed, t=None):
         self.set_wheel_speed(speed, -speed)
         if t != None :
-            time.sleep(t)
-            self.stop()
+            self.stop(t)
 
     def turn_left(self, speed, t=None):
         self.set_wheel_speed(-speed, speed)
         if t != None :
-            time.sleep(t)
-            self.stop()
+            self.stop(t)
 
-    def stop(self):
-        self.set_wheel_speed(0, 0)
+    def stop(self, t=None):
+        if t == None:
+            self.set_wheel_speed(0, 0)
+        else:
+            time.sleep(t)
+            self.set_wheel_speed(0, 0)
+            time.sleep_ms(20)
+            
     
     def set_wheel_speed(self, m1_speed, m2_speed):
         if m1_speed > 0:
